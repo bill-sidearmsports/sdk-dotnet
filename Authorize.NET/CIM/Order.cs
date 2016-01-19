@@ -42,6 +42,7 @@ namespace AuthorizeNet {
         public decimal ShippingAmount { get; set; }
         public string SalesTaxName { get; set; }
         public decimal SalesTaxAmount { get; set; }
+        public decimal DiscountAmount { get; set; }
 
         public string ShippingAddressProfileID { get; set; }
         public string PaymentProfileID { get; set; }
@@ -60,7 +61,7 @@ namespace AuthorizeNet {
         }
         public decimal Total {
             get {
-                return SubTotal + SalesTaxAmount + ShippingAmount;
+                return SubTotal + SalesTaxAmount + ShippingAmount - DiscountAmount;
             }
         }
 
